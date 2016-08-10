@@ -1,31 +1,28 @@
  <div class="row">    
-  <div class="col-md-12 col-sub-head vh-child">Puedes completar la solicitud en menos de 15 minutos
+  <div class="col-md-12 col-sub-head vh-child"><span><span class="glyphicon glyphicon-time"></span> Puedes completar la solicitud en menos de 15 minutos</span>
   </div>
 </div>
 <div class="row row-main-view">
   <div class="col-md-12">
-    <h1>Por favor, revisa las condiciones y documentos 
-      <span>que necesitarás para abrir la cuenta:</span>
+    <h1 class="strong">Por favor, revisa las condiciones y documentos que necesitarás para solicitar tu cuenta
     </h1>
   </div>
-  <div class="col-md-6"><h1>Condiciones</h1>
+  <div class="col-md-6"><h1 class="bold">Condiciones</h1>
     Estas son las condiciones para abrir tu cuenta:
-      <ul>
-        <li ng-bind-html="condicion.contenido"></li>
-      </ul>
-   
+      <div ng-controller="RequirementsCtrl as c">
+        <li ng-bind-html="c.condicion.contenido"></li>
+      </div>
     </div>
     <div class="col-md-6"><h1>Documentos</h1>
-      Estos son los documentos que necesitarás para abrir tu cuenta:
-      <ul>
-        <li ng-bind-html="documento1.contenido"></li>
-        <li ng-bind-html="documento2.contenido"></li>
-        <li ng-bind-html="documento3.contenido"></li>
+      Estos son los documentos que necesitas para tu solicitud de apertura de cuenta, recuerda que deben estar digitalizados, en formato pdf o jpg y deben ser legibles:
+      <ul ng-controller = "RequirementsCtrl as contenido">
+        <li ng-bind-html="contenido.documento1.contenido"></li>
+        <li ng-bind-html="contenido.documento2.contenido"></li>
+        <li ng-bind-html="contenido.documento3.contenido"></li>
       </ul>
-     
     </div>
     <div class="col-md-12">
       <h1>Recuerda</h1>
-      <p>En todo momento <span>guardar</span> tu solicitud y <span>recuperarla</span> después.</p>
+      <p>Puedes <span>recuperar </span> tu solicitud durante los siguientes <span> 7 </span>  días con tu RFC y el código que recibirás en tu celular.</p>
     </div>
   </div>
