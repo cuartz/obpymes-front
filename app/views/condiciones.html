@@ -1,0 +1,31 @@
+ <div class="row">    
+  <div class="col-md-12 col-sub-head vh-child">Puedes completar la solicitud en menos de 15 minutos
+  </div>
+</div>
+<div class="row row-main-view">
+  <div class="col-md-12">
+    <h1>Por favor, revisa las condiciones y documentos 
+      <span>que necesitarás para abrir la cuenta:</span>
+    </h1>
+  </div>
+  <div class="col-md-6"><h1>Condiciones</h1>
+    Estas son las condiciones para abrir tu cuenta:
+      <ul>
+        <li ng-bind-html="condicion.contenido"></li>
+      </ul>
+   
+    </div>
+    <div class="col-md-6"><h1>Documentos</h1>
+      Estos son los documentos que necesitarás para abrir tu cuenta:
+      <ul>
+        <li ng-bind-html="documento1.contenido"></li>
+        <li ng-bind-html="documento2.contenido"></li>
+        <li ng-bind-html="documento3.contenido"></li>
+      </ul>
+     
+    </div>
+    <div class="col-md-12">
+      <h1>Recuerda</h1>
+      <p>En todo momento <span>guardar</span> tu solicitud y <span>recuperarla</span> después.</p>
+    </div>
+  </div>

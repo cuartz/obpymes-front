@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OB PyMES</title>
+
+
+  <!-- Bootstrap -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link href="styles/font-open-sans.css" rel="stylesheet" type="text/css">
+  <link href="styles/custom.css" rel="stylesheet" type="text/css">
+  <link href="styles/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- endbuild -->
+  
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+      <![endif]-->
+    </head>
+    <body ng-app="ob-pymes" ng-controller="IndexCtrl">
+      <div class="container-fluid">
+        <div class="row top-header">
+          <div class="container">
+            <div class="row vh-parent">
+              <div class="col-md-3 logo vh-child"></div>
+              <div class=" col-md-9 menu-help vh-child"> 
+                <div>
+                  <a href="#" class="pull-right">Preguntas frecuentes</a></div>
+                </div>    
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid">
+          <div class="row process-header"><!--mkt-as-->
+
+            <div class="container main-view">
+
+              <div class="row">
+                <div class="col-md-12 title-head">Cuenta PyME</div>
+              </div>
+
+              <!--Views-->
+              <div ng-view=""></div>
+
+              <div class="row footer-view vh-parent">
+                <div class="col-md-12 col-sm-12 vh-child">
+                  <div>
+                    <button type="submit" class="btn btn-red btn-generic pull-right" ng-disabled="deshabilitado" ng-click="continuar()">Continuar</button>
+                  </div>
+                </div>
+              </div>      
+            </div>
+
+
+
+          </div>
+        </div>
+
+
+        <!-- build:js(.) scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="bower_components/angular-touch/angular-touch.js"></script>
+        <script src="bower_components/sockjs/sockjs.js"></script>
+        <script src="bower_components/stomp-websocket/lib/stomp.min.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+		
+        <script src="scripts/app.js"></script>
+		<script src="scripts/services/sockets.js"></script>
+        <script src="scripts/controllers/condiciones.js"></script>
+        <script src="scripts/controllers/formulario.js"></script>
+		<script src="scripts/controllers/index.js"></script>
+		<script src="scripts/controllers/admin.js"></script>
+        <!-- endbuild -->
+
+      </body>
+      </html>
