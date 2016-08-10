@@ -4,10 +4,10 @@
 .logo {
     background-image: url("../images/santander.png");
     height: 75px;
-    width: 171px;
+    /*width: 171px;*/
     background-repeat: no-repeat;
-    background-position: left top;
-    
+    background-position-y: center;
+    background-position-x: 15px;
 }
 
 .required::before{
