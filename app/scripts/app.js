@@ -16,22 +16,21 @@ angular
 		'ngResource',
 		'ngRoute',
 		'ngSanitize',
-		'ngTouch'
+		'ngTouch',
+		'generalServices',
 	])
 	.config(function ($routeProvider) {
 		$routeProvider
-			.when('/', {
-        templateUrl: 'views/condiciones.html',
-        controller: 'CondicionesCtrl'
-      })
-      .when('/formulario', {
-        templateUrl: 'views/formulario.html',
-        controller: 'FormularioCtrl'
-      })
-			.otherwise({
-				redirectTo: '/'
-      });
-	  
-	  
-  });
+		  .when('/', {
+	        templateUrl: 'views/requirements.html',
+	        controller: 'RequirementsCtrl'
+	      })
+	      .when('/formulario', {
+	        templateUrl: 'views/formulario.html',
+	        controller: 'FormularioCtrl'
+	      })
+	      .otherwise({
+					redirectTo: '/'
+	      });
+    });
 

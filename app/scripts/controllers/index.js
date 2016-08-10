@@ -2,18 +2,18 @@
 
 /**
  * @ngdoc function
- * @name ob-pymes.controller:CondicionesCtrl
+ * @name ob-pymes.controller:RequirementsCtrl
  * @description
- * # CondicionesCtrl
+ * # RequirementsCtrl
  * Controller of the ob-pymes
  */
 angular
 	.module('ob-pymes').controller('IndexCtrl', function ($scope, $route, $location){//, $controller) {
 		
-		$scope.deshabilitado=false;
+		$scope.deshabilitado = true;
 		$scope.nextPath='/';
 		
-		$scope.continuar=function(){
+		$scope.continuar = function(){
 			 $location.path($scope.nextPath);
 		};
 	});

@@ -26,7 +26,7 @@
       <script src="js/respond.min.js"></script>
       <![endif]-->
     </head>
-    <body ng-app="ob-pymes" ng-controller="IndexCtrl">
+    <body ng-app="ob-pymes" style="background-color: #F0F0F0" ng-controller="IndexCtrl">
       <div class="container-fluid">
         <div class="row top-header">
           <div class="container">
@@ -34,7 +34,7 @@
               <div class="col-md-3 logo vh-child"></div>
               <div class=" col-md-9 menu-help vh-child"> 
                 <div>
-                  <a href="#" class="pull-right">Preguntas frecuentes</a></div>
+                  <!--a href="#" class="pull-right">Preguntas frecuentes</a></div-->
                 </div>    
               </div>
             </div>
@@ -42,7 +42,7 @@
         </div>
 
         <div class="container-fluid">
-          <div class="row process-header"><!--mkt-as-->
+          <div class="row mkt-header"><!--mkt-as-->
 
             <div class="container main-view">
 
@@ -53,13 +53,14 @@
               <!--Views-->
               <div ng-view=""></div>
 
-              <div class="row footer-view vh-parent">
-                <div class="col-md-12 col-sm-12 vh-child">
-                  <div>
-                    <button type="submit" class="btn btn-red btn-generic pull-right" ng-disabled="deshabilitado" ng-click="continuar()">Continuar</button>
-                  </div>
-                </div>
-              </div>      
+
+
+
+
+
+
+
+              <!--Views-->
             </div>
 
 
@@ -68,7 +69,16 @@
         </div>
 
 
-        <!-- build:js(.) scripts/vendor.js -->
+
+        <div class="row footer-view vh-parent">
+          <div class="col-md-12 col-sm-12 vh-child">
+            <div class="container">
+              <div class="col-md-10 col-sm-10"><span class="link-red"> &lt; Regresar al Simulador</span></div>
+              <div class="col-md-2 col-sm-2"><button type="submit" class="btn btn-red btn-generic pull-right" ng-disabled="deshabilitado" ng-click="continuar()">Continuar</button></div>
+            </div>
+          </div>
+        </div>  
+        
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/angular/angular.js"></script>
@@ -79,19 +89,19 @@
         <script src="bower_components/angular-route/angular-route.js"></script>
         <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
         <script src="bower_components/angular-touch/angular-touch.js"></script>
-        <script src="bower_components/sockjs/sockjs.js"></script>
-        <script src="bower_components/stomp-websocket/lib/stomp.min.js"></script>
+
+
         <!-- endbower -->
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-		
+
         <script src="scripts/app.js"></script>
-		<script src="scripts/services/sockets.js"></script>
-        <script src="scripts/controllers/condiciones.js"></script>
+
+        <script src="scripts/controllers/requirements.js"></script>
         <script src="scripts/controllers/formulario.js"></script>
-		<script src="scripts/controllers/index.js"></script>
-		<script src="scripts/controllers/admin.js"></script>
+        <script src="scripts/controllers/index.js"></script>
+        <script src="scripts/services/generalServices.js"></script>
         <!-- endbuild -->
 
       </body>
