@@ -83,7 +83,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7c1a1d', end
 .main-view h1{
     font-size: 22px;
     color: #000;
-    font-weight: 300
+    font-weight: normal; /*300*/
     }
 
 .main-view h1 span{
