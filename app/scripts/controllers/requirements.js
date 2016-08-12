@@ -11,22 +11,21 @@ var app = angular.module('ob-pymes');
 function RequirementsCtrl($scope, api) {
     //debugger;
     var vm = this;
-
-    api.callService('/mensajes?id=0', 'GET', function (data) {
-        vm.condicion = data;
+	
+    api.callService('/requirements/conditions', 'GET', function (data) {
+        vm.conditions = data.body;
     });
-
-    api.callService('/mensajes?id=1', 'GET', function (data) {
-        vm.documento1 = data;
-	});
-	api.callService('/mensajes?id=2', 'GET', function (data) {
-		vm.documento2 = data;
-	});
-	api.callService('/mensajes?id=3', 'GET', function (data) {
-		vm.documento3 = data;
-	});
-	$scope.$parent.deshabilitado = false;
-	$scope.$parent.nextPath = '/formulario';
+	
+    api.callService('/requirements/documents', 'GET', function (data) {
+        vm.documents = data.body;
+    });
+	
+    api.callService('/requirements/days', 'GET', function (data) {
+	vm.days = data.body.days;
+    });
+	
+    $scope.$parent.deshabilitado=false;
+    $scope.$parent.nextPath = '/formulario';
 }
 
 app.controller('RequirementsCtrl', RequirementsCtrl );
