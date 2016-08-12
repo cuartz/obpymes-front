@@ -9,26 +9,22 @@
 var app = angular.module('ob-pymes');
 
 function RequirementsCtrl($scope, api) {
-    //debugger;
     var vm = this;
-	
-    api.callService('/requirements/conditions', 'GET', function (data) {
+    
+    api.callService('/requirements/conditions', 'GET').then(function (data) {
         vm.conditions = data.body;
     });
-	
-    api.callService('/requirements/documents', 'GET', function (data) {
+    
+    api.callService('/requirements/documents', 'GET').then(function (data) {
         vm.documents = data.body;
     });
-	
-    api.callService('/requirements/days', 'GET', function (data) {
+    
+    api.callService('/requirements/days', 'GET').then(function (data) {
 	vm.days = data.body.days;
     });
-	
+    
     $scope.$parent.deshabilitado=false;
     $scope.$parent.nextPath = '/formulario';
 }
 
-app.controller('RequirementsCtrl', RequirementsCtrl );
-
-RequirementsCtrl.$inject = ['$scope', 'ConsumeRestService'];
-
+app.controller('RequirementsCtrl', ['$scope', 'ConsumeRestService', RequirementsCtrl ]);
