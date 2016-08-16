@@ -18,8 +18,26 @@
         <div class="col-md-6"><!--has-error-->
           <span>*</span> <label>RFC:</label> 
           <!--a href="#" class="red-tooltip" data-toggle="tooltip" title="Su RFC es Invalido!"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span></a-->
-          <input type="text" class="form-control text-uppercase" placeholder="RFC" ng-model="cliente.rfc" ng-pattern="regexrfc" ng-required="true" ng-change="valida(); rfcToUpperCase();" maxlength="13" id="inRfc">
+          <input type="text" class="form-control" placeholder="Clave RFC con Homoclave" ng-model="cliente.rfc" ng-pattern="regexrfc" ng-required="true" ng-change="valida(); rfcToUpperCase();" maxlength="13" id="inRfc">
         </div>
+		
+		 <div class="checkbox col-md-6">
+          <div class="form-control" style="border: 0px; box-shadow: none; padding-left: 0px;">
+            <input id="checkbox" data-id="checkRFC" class="styled" type="checkbox" ng-model="checkAutorizar" ng-click="autorizarDatos()" ng-disabled="">
+            <label for="checkbox">Autorizo el uso de mis datos</label>
+          </div>
+        </div>
+		
+		      <div class="row row-main-view row-form-controls">
+        <div class="col-md-6">
+          <span>*</span> <label>Celular:</label>
+          <input type="celular" class="form-control" id="celular" placeholder="Número Celular" ng-disabled="condicion">
+        </div>
+        <div class="col-md-6">
+          <button type="submit" class="btn btn-red btn-generic-small" style="margin-top: 25px;" ng-disabled="condicion">Enviar SMS</button>
+        </div>
+            </div>
+		
         <div class="col-md-6">
           <span>*</span> <label>Nombre:</label>
           <input type="nombre" class="form-control" id="nombre" placeholder="Nombre" ng-model="cliente.nombre"  ng-change="valida()" ng-disabled="!cliente.rfc">
@@ -43,28 +61,12 @@
           <input type="confirm-email" class="form-control" id="confirm-email" placeholder="Confirmar correo electrónico" ng-model="email" ng-change="valida()" ng-disabled="!cliente.rfc">
         </div>
 
-        <div class="col-md-6">
-          <span>*</span> <label>Código postal:</label>
-          <input type="number" maxlength="5" class="form-control" id="cp" placeholder="Código Postal"  ng-model="cliente.codigoPostal" ng-change="valida()" ng-disabled="!cliente.rfc">
-        </div>
 
-        <div class="checkbox col-md-6">
-          <div class="form-control" style="border: 0px; box-shadow: none; padding-left: 0px;">
-            <input id="checkbox" data-id="checkRFC" class="styled" type="checkbox" ng-model="checkAutorizar" ng-click="autorizarDatos()" ng-disabled="">
-            <label for="checkbox">Autorizo el uso de mis datos</label>
-          </div>
-        </div>
+
+
             </div>
 
-      <div class="row row-main-view row-form-controls">
-        <div class="col-md-6">
-          <span>*</span> <label>Celular:</label>
-          <input type="celular" class="form-control" id="celular" placeholder="Número Celular" ng-disabled="condicion">
-        </div>
-        <div class="col-md-6">
-          <button type="submit" class="btn btn-red btn-generic-small" style="margin-top: 25px;" ng-disabled="condicion">Enviar SMS</button>
-        </div>
-            </div>
+
       
             <script>
               $(document).ready(function(){
